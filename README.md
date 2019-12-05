@@ -116,6 +116,11 @@ for i in `cat left_pop`; do qsub qpAdm.sh -N $i -F $i ; done &
 grep -A 1 "tail prob"   *.out |awk '{if ($6>0.05) print }'  |grep -v fixed | awk '{print $1}' |cut -f 2,3 -d "." | sed 's/.out-//g' | sort -u
 ```
 
+**Try different outgoups**
+
+Mota, Ust’-Ishim, Kostenki14, GoyetQ116-1, Vestonice16, ElMiron, Villabruna, Stuttgart, Mbuti, French
+
+
 **Two-way mixture:**
 
 Left = (NE20, Ref1, Ref2)
