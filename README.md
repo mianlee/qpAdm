@@ -200,6 +200,11 @@ for i in `cat left_pop`; do echo $i NE56 | tr " " "\n" > $i; sed 's/XX/'${i}'/g'
 for i in `cat left_pop`; do qsub qpAdm.sh -N $i -F $i ; done &
 ```
 
+```
+grep -A 1 "tail prob"   *.out |awk '{if ($6>0.05) print }'  |grep -v fixed | awk '{print $1}' |cut -f 2,3 -d "." | sed 's/.out-//g' | sort -u > list.final
+```
+
+
 **Two-way mixture:**
 
 Left = (NE56, Ref) or (Ref, NE56)
