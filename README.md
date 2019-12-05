@@ -263,8 +263,20 @@ for i in `cat 2way_list | tr " " "."`; do qsub qpAdm2.sh -N $i -F $i; done &
 
 
 ```
-grep -A 2 "tail prob"   *.out |awk '{if ($6>0.05) print }'  |grep -v 'fixed\|infeasible' | awk '{print $1}' |cut -f 2,3 -d "." | sort -u > list.final
+grep -A 1 "tail prob"   *.out |awk '{if ($6>0.05) print }'  |grep -v 'fixed\|infeasible' | awk '{print $1}' |cut -f 2,3 -d "." | sort -u > list.final
 ```
+
+```
+ cat ../list.final | while read line; do cp ../../NE56/Two_way/results.2way/par.$line.out .; done
+```
+
+```
+grep "nested" *.out | awk '{if ($11<0.05) print$1}' | cut -f 2,3 -d "." | sort -u > list.final
+```
+
+
+
+
 
 ### NE_12K Individuals (12,395 years old)
 
