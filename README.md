@@ -94,7 +94,7 @@ grep -A 1 "tail prob"   *.out |awk '{if ($6>0.05) print }'  |grep -v fixed | awk
 
 **Try more references (NE20 as source):**
 
-Left = (NE56, Ref) or (Ref, NE56)
+Left = (NE20, Ref) or (Ref, NE20)
 
 **Ref:** Malta1, AfontovaGora3, Yana1, Yamnaya, Shamanka_EN, Lokomotiv_EN, UstBelaya_N, UstBelaya_MED, UstBelaya_EBA, Afanasievo, Andronovo, Boisman_MN, DevilsCave_N, Kolyma, Clovis, USR1, Saqqaq, HDYM1, Bbdong, Qihe, Chokhopani, Mebrak, Ikawazu, Altaian, Oroqen, Chukchi, Itelman, Aleut, Koryak, Japanese, Korean, Han, Miao, Ami, Lahu, Onge, Papuan, Pima, Mayan, Mixtec, Mixe, Zapotec, Piapoco, Karitiana, Surui, Quechua, Chane, NE20, NE_12K, NE-5, NE-1, NE_10K, NE_9k, NE_9K, NE-45, NE-35, NE-16, NE-49, NE_7K, NE_6K, NE-22, NE_5.5K, NE-59.
 
