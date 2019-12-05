@@ -177,6 +177,9 @@ for i in `cat 2way_list| tr " " "." `;do ( echo $i | tr "." "\n"; echo NE20 ; ) 
 for i in `cat 2way_list | tr " " "."`; do qsub qpAdm2.sh -N $i -F $i; done &
 ```
 
+```
+grep -A 3 "tail prob"   *.out |awk '{if ($6>0.05) print }'  |grep -v 'fixed\|infeasible' | awk '{print $1}' |cut -f 2,3 -d "." | sort -u > list.final
+```
 
 
 ### NE56 Individuals (16,090 years old)
@@ -229,7 +232,9 @@ for i in `cat 2way_list | tr " " "."`; do qsub qpAdm2.sh -N $i -F $i; done &
 ```
 
 
-
+```
+grep -A 3 "tail prob"   *.out |awk '{if ($6>0.05) print }'  |grep -v 'fixed\|infeasible' | awk '{print $1}' |cut -f 2,3 -d "." | sort -u > list.final
+```
 
 ### NE_12K Individuals (12,395 years old)
 
@@ -250,6 +255,10 @@ for i in `cat left_pop`; do echo $i NE_12K | tr " " "\n" > $i; sed 's/XX/'${i}'/
 
 ```
 for i in `cat left_pop`; do qsub qpAdm.sh -N $i -F $i ; done &
+```
+
+```
+grep -A 1 "tail prob"   *.out |awk '{if ($6>0.05) print }'  |grep -v fixed | awk '{print $1}' |cut -f 2,3 -d "." | sed 's/.out-//g' | sort -u
 ```
 
 **Two-way mixture:**
@@ -276,4 +285,8 @@ for i in `cat 2way_list| tr " " "." `;do ( echo $i | tr "." "\n"; echo NE_12K ; 
 
 ```
 for i in `cat 2way_list | tr " " "."`; do qsub qpAdm2.sh -N $i -F $i; done &
+```
+
+```
+grep -A 3 "tail prob"   *.out |awk '{if ($6>0.05) print }'  |grep -v 'fixed\|infeasible' | awk '{print $1}' |cut -f 2,3 -d "." | sort -u > list.final
 ```
