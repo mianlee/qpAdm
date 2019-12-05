@@ -176,3 +176,99 @@ for i in `cat 2way_list| tr " " "." `;do ( echo $i | tr "." "\n"; echo NE20 ; ) 
 ```
 for i in `cat 2way_list | tr " " "."`; do qsub qpAdm2.sh -N $i -F $i; done &
 ```
+
+
+
+### NE56 Individuals (16,090 years old)
+
+**One-way mixture:**
+
+Left = (NE56, Ref) or (Ref, NE56)
+
+**Ref:** Malta1, AfontovaGora3, Yana1, Yamnaya, Shamanka_EN, Lokomotiv_EN, UstBelaya_N, UstBelaya_MED, UstBelaya_EBA, Afanasievo, Andronovo, Boisman_MN, DevilsCave_N, Kolyma, Clovis, USR1, Saqqaq, HDYM1, Bbdong, Qihe, Chokhopani, Mebrak, Ikawazu, Altaian, Oroqen, Chukchi, Itelman, Aleut, Koryak, Japanese, Korean, Han, Miao, Ami, Lahu, Onge, Papuan, Pima, Mayan, Mixtec, Mixe, Zapotec, Piapoco, Karitiana, Surui, Quechua, Chane, NE20, NE_12K, NE-5, NE-1, NE_10K, NE_9k, NE_9K, NE-45, NE-35, NE-16, NE-49, NE_7K, NE_6K, NE-22, NE_5.5K, NE-59.
+
+Right = (Mbuti, Yoruba, Mota, Onge, Papuan, Ust’-Ishim, Kostenki14, GoyetQ116-1, Vestonice16, sunghir , Satsurblia), [Martin Sikora et.al., Nature, 2019](https://www.nature.com/articles/s41586-019-1279-z).
+
+
+
+```
+for i in `cat left_pop`; do echo $i NE56 | tr " " "\n" > $i; sed 's/XX/'${i}'/g' par > par.$i; done
+```
+
+
+```
+for i in `cat left_pop`; do qsub qpAdm.sh -N $i -F $i ; done &
+```
+
+**Two-way mixture:**
+
+Left = (NE56, Ref) or (Ref, NE56)
+
+**Ref:** Malta1, AfontovaGora3, Yana1, Yamnaya, Shamanka_EN, Lokomotiv_EN, UstBelaya_N, UstBelaya_MED, UstBelaya_EBA, Afanasievo, Andronovo, Boisman_MN, DevilsCave_N, Kolyma, Clovis, USR1, Saqqaq, HDYM1, Bbdong, Qihe, Chokhopani, Mebrak, Ikawazu, Altaian, Oroqen, Chukchi, Itelman, Aleut, Koryak, Japanese, Korean, Han, Miao, Ami, Lahu, Onge, Papuan, Pima, Mayan, Mixtec, Mixe, Zapotec, Piapoco, Karitiana, Surui, Quechua, Chane, NE20, NE_12K, NE-5, NE-1, NE_10K, NE_9k, NE_9K, NE-45, NE-35, NE-16, NE-49, NE_7K, NE_6K, NE-22, NE_5.5K, NE-59.
+
+Right = (Mbuti, Yoruba, Mota, Onge, Papuan, Ust’-Ishim, Kostenki14, GoyetQ116-1, Vestonice16, sunghir , Satsurblia), [Martin Sikora et.al., Nature, 2019](https://www.nature.com/articles/s41586-019-1279-z).
+
+```
+for i in `cat left_pop`; do awk -v var=$i '{print var " " $1}' left_pop | grep -v "$i $i" >> 2way_list; done
+```
+
+
+```
+for i in `cat 2way_list| tr " " "." `;do ( echo $i | tr "." "\n"; echo NE56 ; ) > $i; sed 's/XX/'${i}'/g' par > par.$i; done
+
+```
+
+
+```
+for i in `cat 2way_list | tr " " "."`; do qsub qpAdm2.sh -N $i -F $i; done &
+```
+
+
+
+
+### NE_12K Individuals (12,395 years old)
+
+**One-way mixture:**
+
+Left = (NE_12K, Ref) or (Ref, NE_12K)
+
+**Ref:** Malta1, AfontovaGora3, Yana1, Yamnaya, Shamanka_EN, Lokomotiv_EN, UstBelaya_N, UstBelaya_MED, UstBelaya_EBA, Afanasievo, Andronovo, Boisman_MN, DevilsCave_N, Kolyma, Clovis, USR1, Saqqaq, HDYM1, Bbdong, Qihe, Chokhopani, Mebrak, Ikawazu, Altaian, Oroqen, Chukchi, Itelman, Aleut, Koryak, Japanese, Korean, Han, Miao, Ami, Lahu, Onge, Papuan, Pima, Mayan, Mixtec, Mixe, Zapotec, Piapoco, Karitiana, Surui, Quechua, Chane, NE20, NE56, NE-5, NE-1, NE_10K, NE_9k, NE_9K, NE-45, NE-35, NE-16, NE-49, NE_7K, NE_6K, NE-22, NE_5.5K, NE-59.
+
+Right = (Mbuti, Yoruba, Mota, Onge, Papuan, Ust’-Ishim, Kostenki14, GoyetQ116-1, Vestonice16, sunghir , Satsurblia), [Martin Sikora et.al., Nature, 2019](https://www.nature.com/articles/s41586-019-1279-z).
+
+
+
+```
+for i in `cat left_pop`; do echo $i NE_12K | tr " " "\n" > $i; sed 's/XX/'${i}'/g' par > par.$i; done
+```
+
+
+```
+for i in `cat left_pop`; do qsub qpAdm.sh -N $i -F $i ; done &
+```
+
+**Two-way mixture:**
+
+Left = (NE_12K, Ref) or (Ref, NE_12K)
+
+**Ref:** Malta1, AfontovaGora3, Yana1, Yamnaya, Shamanka_EN, Lokomotiv_EN, UstBelaya_N, UstBelaya_MED, UstBelaya_EBA, Afanasievo, Andronovo, Boisman_MN, DevilsCave_N, Kolyma, Clovis, USR1, Saqqaq, HDYM1, Bbdong, Qihe, Chokhopani, Mebrak, Ikawazu, Altaian, Oroqen, Chukchi, Itelman, Aleut, Koryak, Japanese, Korean, Han, Miao, Ami, Lahu, Onge, Papuan, Pima, Mayan, Mixtec, Mixe, Zapotec, Piapoco, Karitiana, Surui, Quechua, Chane, NE20, NE56, NE-5, NE-1, NE_10K, NE_9k, NE_9K, NE-45, NE-35, NE-16, NE-49, NE_7K, NE_6K, NE-22, NE_5.5K, NE-59.
+
+Right = (Mbuti, Yoruba, Mota, Onge, Papuan, Ust’-Ishim, Kostenki14, GoyetQ116-1, Vestonice16, sunghir , Satsurblia), [Martin Sikora et.al., Nature, 2019](https://www.nature.com/articles/s41586-019-1279-z).
+
+
+
+
+```
+for i in `cat left_pop`; do awk -v var=$i '{print var " " $1}' left_pop | grep -v "$i $i" >> 2way_list; done
+```
+
+
+```
+for i in `cat 2way_list| tr " " "." `;do ( echo $i | tr "." "\n"; echo NE_12K ; ) > $i; sed 's/XX/'${i}'/g' par > par.$i; done
+
+```
+
+
+```
+for i in `cat 2way_list | tr " " "."`; do qsub qpAdm2.sh -N $i -F $i; done &
+```
